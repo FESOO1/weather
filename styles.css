@@ -18,6 +18,7 @@ body {
     background: url(./assets/bg.jpg) no-repeat;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
 }
 
 /* MAIN */
@@ -155,6 +156,7 @@ main {
     opacity: 0;
     pointer-events: none;
     transition: top 300ms, opacity 300ms;
+    z-index: 999;
 }
 
 .main-output-header-weather-days-drop-down-active {
