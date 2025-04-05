@@ -3,6 +3,24 @@ const filterButton = document.querySelector('#filterButton');
 const filterDropDownContainer = document.querySelector('.main-output-header-weather-days-drop-down');
 let isFilterMenuDropped = false;
 
+// RETRIEVING WEATHER DATA
+
+async function retrievingWeatherData() {
+    try {
+        const request = new Request('https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Uzbekistan?unitGroup=us&key=QTYDK2XMT4N4JY9A2ECH92J7D&contentType=json');
+
+        const response = await fetch(request);
+
+        const data = await response.json();
+
+        console.log(data);
+    } catch(error) {
+        console.log(error);
+    };
+};
+
+retrievingWeatherData();
+
 // FILTER DROPDOWN
 
 function handlingTheFilterDropDown(e) {

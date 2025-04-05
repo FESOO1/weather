@@ -186,3 +186,51 @@ main {
 .main-output-header-weather-days-drop-down-inner:active {
     background-color: rgba(255,255,255,0.15);
 }
+
+/* MAIN OUTPUT ITSELF */
+
+.main-output-itself {
+    border: var(--border-2);
+    border-top: 0;
+    backdrop-filter: var(--blur-bg);
+    -webkit-backdrop-filter: var(--blur-bg);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* MAIN OUTPUT ITSELF LEFT */
+
+.main-output-itself-left {
+    border-right: var(--border-2);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.main-output-itself-left-svg {
+    width: 150px;
+    height: 150px;
+}
+
+.main-output-itself-left-temperature,
+.main-output-itself-left-temperature-text {
+    color: white;
+    font-weight: 400;
+}
+
+/* MAIN OUTPUT ITSELF RIGHT */
+
+.main-output-itself-right {
+    height: max-content;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.main-output-itself-right-paragraph {
+    color: white;
+    font-size: 1.1rem;
+}
