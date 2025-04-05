@@ -10,10 +10,7 @@ const windText = document.querySelector('#windText');
 const snowText = document.querySelector('#snowText');
 const sunriseText = document.querySelector('#sunriseText');
 const sunsetText = document.querySelector('#sunsetText');
-const date = new Date().toISOString().slice(0, 10);
-let currentDate = date;
-
-console.log(currentDate);
+let currentDate;
 
 // RETRIEVING WEATHER DATA
 
@@ -42,8 +39,17 @@ function filterData(data) {
         dropDownInner.classList.add('main-output-header-weather-days-drop-down-inner');
         dropDownInner.textContent = data.days[i].datetime;
         if (i === 0) {
+            currentDate = data.days[i].datetime;
             dropDownInner.classList.add('main-output-header-weather-days-drop-down-inner-active');
         };
+
+        dropDownInner.addEventListener('click', () => {
+            for (const dropDownInner of filterDropDownContainer.children) {
+                dropDownInner.classList.remove('main-output-header-weather-days-drop-down-inner-active');
+            };
+            dropDownInner.classList.add('main-output-header-weather-days-drop-down-inner-active');
+            currentDate = data.days[i].datetime;
+        });
 
         filterDropDownContainer.appendChild(dropDownInner);
     };
