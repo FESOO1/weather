@@ -21,6 +21,17 @@ body {
     background-attachment: fixed;
 }
 
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
 /* MAIN */
 
 main {
@@ -232,9 +243,8 @@ main {
     row-gap: 20px;
 }
 
-.main-output-itself-left-svg {
-    width: 150px;
-    height: 150px;
+.main-output-itself-left-icon {
+    font-size: 7rem;
 }
 
 .main-output-itself-left-temperature,

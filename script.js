@@ -15,6 +15,7 @@ const filterDropDownContainer = document.querySelector('.main-output-header-weat
 let isFilterMenuDropped = false;
 
 // WEATHER
+const weatherIcon = document.querySelector('#weatherIcon');
 const countryNameText = document.querySelector('#countryNameText');
 const countryTimeZoneText = document.querySelector('#countryTimeZoneText');
 const temperatureText = document.querySelector('#temperatureText');
@@ -132,6 +133,28 @@ function displayTheWeatherData(data) {
     sunsetText.textContent = `Sunset: ${filteredItem[0].sunset}`;
 
     outputContainer.classList.add('main-output-active');
+
+    const iconName = filteredItem[0].icon;
+    // ICON
+    gettingIconData(iconName);
+};
+
+// GETTING ICON DATA
+
+async function gettingIconData(iconName) {
+    try {
+        const response = await fetch('./icons.json');
+
+        if (!response.ok) {
+            throw new Error(response.status);
+        };
+
+        const data = await response.json();
+
+        weatherIcon.textContent = data[iconName];
+    } catch(error) {
+        console.log(error);
+    };
 };
 
 // INITIALIZING BUTTONS
