@@ -1,6 +1,9 @@
 // OUTPUT CONTAINER
 const outputContainer = document.querySelector('.main-output');
 
+// NOT FOUND MESSAGE
+const notFoundMessage = document.querySelector('.not-found-error-message');
+
 // SEARCH
 const inputItself = document.querySelector('#inputItself');
 const searchButton = document.querySelector('#searchButton');
@@ -50,12 +53,17 @@ async function retrievingWeatherData() {
 
         const response = await fetch(request);
 
+        if (!response.ok) {
+            throw new Error(response.status);
+        };
+        
+        notFoundMessage.classList.remove('not-found-error-message-active');
         const data = await response.json();
 
-        console.log(data);
         filterData(data);
     } catch(error) {
         console.log(error);
+        notFoundMessage.classList.add('not-found-error-message-active');
     };
 };
 
