@@ -65,6 +65,7 @@ async function retrievingWeatherData() {
     } catch(error) {
         console.log(error);
         notFoundMessage.classList.add('not-found-error-message-active');
+        outputContainer.classList.remove('main-output-active');
     };
 };
 

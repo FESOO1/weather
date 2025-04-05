@@ -251,6 +251,7 @@ main {
 .main-output-itself-left-temperature-text {
     color: white;
     font-weight: 400;
+    text-align: center;
 }
 
 /* MAIN OUTPUT ITSELF RIGHT */
@@ -305,5 +306,8 @@ main {
     .main-output-itself-right {
         grid-template-columns: 1fr;
         row-gap: 15px;
+    }
+    .main-output-itself-left-icon {
+        font-size: 5rem;
     }
 }
