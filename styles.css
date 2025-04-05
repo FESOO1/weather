@@ -144,7 +144,7 @@ main {
 
 .main-output-header-weather-days-drop-down {
     position: absolute;
-    top: 100%;
+    top: 70%;
     left: 0;
     width: 100%;
     display: flex;
@@ -152,6 +152,15 @@ main {
     border: var(--border-2);
     backdrop-filter: var(--blur-bg);
     -webkit-backdrop-filter: var(--blur-bg);
+    opacity: 0;
+    pointer-events: none;
+    transition: top 300ms, opacity 300ms;
+}
+
+.main-output-header-weather-days-drop-down-active {
+    pointer-events: unset;
+    opacity: 1;
+    top: 100%;
 }
 
 .main-output-header-weather-days-drop-down-inner {
